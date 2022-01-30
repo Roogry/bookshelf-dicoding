@@ -1,7 +1,17 @@
+:root {
+    --primary: #4C90E3;
+    --primary-darker: #3777c5;
+    --secondary: #EDF4FC;
+    --secondary-darker: #e0ecfa;
+    --text-primary: #3f4346;
+    --text-secondary: #7d8286;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: var(--text-primary);
 }
 
 body, input, button {
@@ -12,161 +22,184 @@ input, button {
     font-size: 16px;
 }
 
-.head_bar {
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: cornflowerblue;
-    color: white;
-}
-
 main {
-    max-width: 800px;
+    display: flex;
+    gap: 24px;
+    max-width: 1300px;
     width: 80%;
     margin: 0 auto;
     padding: 16px;
-
 }
 
-.input_section {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 10px;
+.head-bar {
+    padding: 12px;
+    background-color: var(--primary);
+    margin-bottom: 32px;
 }
 
-.input_section > h2 {
+.head-bar h1{
+    color: white;
     text-align: center;
-    color: cornflowerblue;
 }
 
-.input_section > form > .input {
-    margin: 8px 0;
+.main-left{
+    flex-grow: 1;
 }
 
-.input_section > form > button {
-    background-color: cornflowerblue;
-    color: white;
-    border: 0;
-    border-radius: 5px;
+.main-right{
+    max-width: 350px;
+}
+
+.section-title{
+    margin-bottom: 16px;
+    color: var(--primary);
+}
+
+.book-shelf .section-title{
+    margin-top: 24px;
+}
+
+.section-subtitle{
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+}
+
+.input-section .section-title, .search-section .section-title{
+    margin-bottom: 4px;
+}
+
+.input-section{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 16px 24px;
+}
+
+.input label, .input input{
     display: block;
     width: 100%;
-    padding: 8px;
-    cursor: pointer;
 }
 
-.input_section > form > button > span {
-    font-weight: bold;
+.input label{
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
-.input_section > form > .input > input {
-    display: block;
-    width: 100%;
-    padding: 8px;
+.input input{
+    height: 38px;
     border-radius: 5px;
+    border: 1px solid #b4b4b480;
+    margin-bottom: 8px;
+    padding: 0 12px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    outline: none;
 }
 
-
-
-.input_section > form > .input > label {
-    color: cornflowerblue;
-    font-weight: bold;
+.input input:focus{
+    border: 1px solid #333333
 }
 
-.input_section > form > .input_inline {
-    margin: 12px 0;
+.input-inline {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.btn span{
+    color: inherit;
+}
+
+.btn-primary{
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover{
+    background-color: var(--primary-darker);
+}
+
+.btn-secondary{
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.btn-secondary:hover{
+    background-color: var(--secondary-darker);
+}
+
+.search-section{
+    width: 350px;
+}
+
+#searchBook{
     display: flex;
-    align-items: center;
-}
-
-.input_section > form > .input_inline > label {
-    color: cornflowerblue;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.search_section {
-    margin: 16px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-    border: 1px solid black;
     border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    padding: 12px 16px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
 }
 
-.search_section > h2 {
-    color: cornflowerblue;
+#searchBook:focus-within{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 }
 
-.search_section > form {
-    padding: 16px;
+#searchBook input{
+    max-width: calc(100% - 60px);
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-weight: 600;
+}
+
+#inputBook .btn{
     width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr 0.5fr;
-    grid-gap: 10px;
 }
 
-.search_section > form > label {
+#bookReset{
+    margin-bottom: 8px;
+}
+
+.book-section{
     display: flex;
-    align-items: center;
+    gap: 32px;
 }
 
-.search_section > form > input {
-    padding: 5px;
-    border-radius: 5px;
+.book_item{
+    margin-bottom: 16px;
 }
 
-.search_section > form > button {
-    background-color: cornflowerblue;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    cursor: pointer;
+.book_item .action{
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
 }
 
-.book_shelf {
-    margin: 16px 0 0 0;
-    border: 1px solid black;
-    padding: 16px;
-    border-radius: 10px;
+@media only screen and (max-width: 1094px) {
+    .book-section{
+        display: block;
+    }
 }
 
-.book_shelf > h2 {
-    color: cornflowerblue;
-}
+@media only screen and (max-width: 788px) {
+    main {
+        display: flex;
+        flex-flow: column-reverse;
+    }
 
-.book_shelf > .book_list {
-    padding: 16px;
-}
-
-.book_shelf > .book_list > .book_item {
-    padding: 8px 16px 16px 16px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 10px 0;
-}
-
-.book_shelf > .book_list > .book_item > h3, p {
-    margin: 8px 0;
-}
-
-.book_shelf > .book_list > .book_item > .action > button {
-    border: 0;
-    padding: 5px;
-    margin: 0 5px 0 0;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.book_shelf > .book_list > .book_item > .action > .green {
-    background-color: darkgreen;
-    color: white;
-}
-
-.book_shelf > .book_list > .book_item > .action > .red {
-    background-color: darkred;
-    color: white;
+    .main-right, .search-section{
+        max-width: 788px;
+        width: unset;
+    }
 }
