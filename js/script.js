@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!EDIT_MODE) {
             addBook();
-        }else{
+        } else {
             updateBook();
         }
     });
 
-    submitForm.addEventListener("reset", function(event){
+    submitForm.addEventListener("reset", function (event) {
         event.preventDefault();
         setupForm();
     })

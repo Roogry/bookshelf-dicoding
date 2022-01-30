@@ -75,7 +75,7 @@ function createButton(innerText, buttonTypeClass, eventListener) {
     return button;
 }
 
-function getBookFormValue(){
+function getBookFormValue() {
     const inputId = document.getElementById("inputBookId").value;
     const inputTitle = document.getElementById("inputBookTitle").value;
     const inputAuthor = document.getElementById("inputBookAuthor").value;
@@ -104,7 +104,7 @@ function addBook() {
     setupForm();
 }
 
-function updateBook(){
+function updateBook() {
     const bookObject = getBookFormValue();
 
     const bookIndex = findBookIndex(bookObject.id);
@@ -171,7 +171,7 @@ function editBook(bookElement) {
     setupForm(book);
 }
 
-function setupForm(book){
+function setupForm(book) {
     const formTitle = document.getElementById("formTitle");
     const formSubtitle = document.getElementById("formSubtitle");
     const inputId = document.getElementById("inputBookId");
@@ -192,7 +192,7 @@ function setupForm(book){
 
         formTitle.innerText = "Edit Buku"
         formSubtitle.innerText = "Ada update atau salah ketik? Silahkan diubah"
-    }else{
+    } else {
         EDIT_MODE = false;
         inputId.value = "";
         inputTitle.value = "";
